@@ -54,8 +54,9 @@ jobs:
           DEFAULT_BRANCH: master
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   test:
+      needs: build
       runs-on: ubuntu-latest
-
+    
       steps:
       - name: Set up Python Environment
         uses: actions/setup-python@v2
